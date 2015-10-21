@@ -1,9 +1,11 @@
-<div id="post_announcement" ng-repeat="posts in post.slice().reverse() | limitTo:postQuantity | orderBy: post_date">
-<div class="container-fluid hvr-curl-top-right post_announcement" style="background:#ffffff;padding:10px;margin-bottom:10px;width:100%;">
+<a style="color:#262626;" href="#/post/{{posts.$id}}" ng-repeat="posts in post.slice().reverse() | limitTo:postQuantity | orderBy: post_date"><div id="post_announcement">
+<div class="container-fluid post_announcement" style="background:#ffffff;padding:10px;margin-bottom:10px;width:100%;">
 <div class="media">
+<!--
   <div class="media-left media-middle">
       <img src="templates/img/{{post.prio}}" class="media-object" >
   </div>
+-->
   <div class="media-body">
     <h4 class="media-heading">{{posts.post_title | capitalize}}</h4><hr>
       <div class="media-content">
@@ -15,7 +17,7 @@
         <small><i class="fa fa-clock-o fa-fw"></i> &nbsp; Posted <span am-time-ago="posts.post_date"></span>  by: @{{posts.post_by}}</small>
     </div>
     </div>
-    </div>
+</div></a>
 <button style="font-weight:bolder;" class="btn btn-custom btn-block" ng-click="getMorePost()">Show More Posts...</button>
 
 <!--end announcement-->

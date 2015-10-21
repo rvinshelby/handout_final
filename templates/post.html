@@ -1,15 +1,29 @@
-<div class="card text-center">
-  <div class="card-header">
-    {{post.user}}
+<div id="post_announcement">
+<div class="container-fluid post_announcement" style="background:#ffffff;padding:10px;margin-bottom:10px;width:100%;">
+<div class="media">
+<!--
+  <div class="media-left media-middle">
+      <img src="templates/img/{{post.prio}}" class="media-object" >
   </div>
-  <div class="card-block">
-    <h4 class="card-title">{{post.title}}</h4>
-    <p class="card-text">{{post.content}}</p>
-
-  </div>
-  <div class="card-footer">
-      <div class="text-muted">
-    {{post.time}}
-          </div>
+-->
+  <div class="media-body">
+    <h4 class="media-heading">{{post.post_title | capitalize}}</h4><hr>
+      <div class="media-content">
+    {{post.post_content | capitalize}}
+    </div>
   </div>
 </div>
+    <hr style="width:75%;">
+    <div class="row">
+    <div class="well col-xs-6">
+        <button class="btn btn-success btn-block">{{post.post_helpfulcount}} <br> find this helpful</button>
+    </div>
+    <div class="well col-xs-6">
+        <button class="btn btn-danger btn-block">{{post.post_flagcount}} <br> flagged this post.</button>
+    </div>
+        </div>
+    <div class="container-fluid" style="background:#efefef;padding:5px;margin-top:20px;">
+        <small><i class="fa fa-clock-o fa-fw"></i> &nbsp; Posted <span am-time-ago="post.post_date"></span>  by: @{{post.post_by}}</small>
+    </div>
+    </div>
+    </div>

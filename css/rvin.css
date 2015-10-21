@@ -221,6 +221,13 @@
             background: #DC4E41;
             color: #efefef;
         }
+          .btn-twitter
+        {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 800;
+            background: #4099FF;
+            color: #efefef;
+        }
 
 /*ASD*/
 
@@ -296,4 +303,29 @@ textarea{
 
 .form-group {
 	width: 100%;
+}
+.developed{
+    font-family: 'Open sans', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+.desc{
+    font-family: 'Open sans', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }

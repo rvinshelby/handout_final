@@ -22,9 +22,9 @@ $urlRouterProvider.otherwise('/main');
             controller: 'handoutCtrl',
         })
         .state('post', {
-            url: '/post',
+            url: '/post/:id',
             templateUrl: 'templates/post.html',
-            controller: 'getpostCtrl'
+            controller: 'getPostCtrl'
         })
         .state('premium', {
             url: '/premium',
