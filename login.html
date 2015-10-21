@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Handout</title>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" >
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	  <link rel="stylesheet" href="css/font-awesome.min.css">
+	  <link rel="stylesheet" href="css/animate.min.css">
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+       <link rel="stylesheet" href="css/rvin.css" media="screen">
+      <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+      <style>
+		body
+		{
+		-webkit-transition: background 0.5s ease-in-out;
+		transition: background 0.5s ease-in-out;
+/*		display:none;*/
+		}
+        .animated
+		 {
+		 -webkit-animation-duration: 0.5s;
+		 animation-duration: 0.5s;
+		 }
+          
+      </style>
+   </head>
+   <body class="bg-info">
+<!--LOGIN FORM-->
+<section id="login">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <div class="center-block" style="max-width:420px;padding:20px"><img src="images/handout_text.png" style="width:100%"></div>
+                    <br>
+<!--CONTENT-->
+                    <button class="btn btn-facebook btn-block" id="btn-facebook"><i class="fa fa-facebook-official fa-fw"></i> &nbsp; Login with Facebook</button>
+                    <button class="btn btn-gplus btn-block" id="btn-facebook" onlogin="FB.login();"><i class="fa fa-google-plus-square fa-fw"></i> &nbsp; Login with Google+</button>
+
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
+       <footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>handout © - 2015</p>
+                <p><img src="images/teamBuddy_bg.png" style="height:32px;"></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--LOGIN END-->
+       <script src="js/jquery-1.11.3.min.js"></script>
+       <script src="js/bootstrapv4.js"></script>
+       <script src="js/openfb.js"></script>
+        <script>
+openFB.init({appId: '1081077438599438'});
+$("#btn-facebook").click(function(){
+openFB.login(
+                function(response) {
+                    if(response.status === 'connected') {
+                        localStorage.setItem('ho-user', response.name);
+                        location.href="home.html";
+                    } else {
+                        alert('Facebook login failed: ' + response.error);
+                    }
+                }, {scope: 'email'});
+});
+       </script>
+   </body>
+</html>

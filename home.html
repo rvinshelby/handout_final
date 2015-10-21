@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Home</title>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"  >
+       
+      <meta charset="utf-8">
+       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	  <link rel="stylesheet" href="css/font-awesome.min.css">
+	  <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/genericons/genericons.css">
+        <link rel="stylesheet" href="css/base.css">
+       <link rel="stylesheet" href="css/rvin.css">
+       
+              <script src="js/angular.js"></script>
+            <script src="js/angular-ui-router.min.js"></script>
+      <style>
+		body
+		{
+		background: #f5f5f5;
+		padding-top:55px;
+		}
+		 .navbar-fixed-top .row
+		 {
+		 margin:0;
+		 padding:0;
+		 }
+		 .menu-top
+		 {
+		 padding:0;
+		 padding-top:10px;
+		 background:#3498db;
+        	position: absolute;
+		 }
+
+		 .menu-top .col-xs-2
+		 {
+		 padding:0;
+		 padding-bottom:5px;
+		 color:#efefef;
+		 text-decoration: none;
+		 text-align: center;
+		 font-size: 0.9em;
+		 }
+		 .menu-top .active
+		 {
+		 border-bottom: 5px solid #2aa7e8;
+		 color: #efefef;
+		 }
+		 .animated
+		 {
+		 -webkit-animation-duration: 0.55s;
+		 animation-duration: 0.55s;
+		 }
+		 .list-group-notifications .list-group-item
+		 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+		 border-left: 0;
+		 border-right: 0;
+		 border-radius:0;
+		 }
+          html {
+	-ms-touch-action: none;
+}
+          html::-webkit-scrollbar { 
+    display: none; 
+}
+      </style>
+ 
+   </head>
+   <body ng-app="handoutApp">
+<!--START NAVBAR-->
+			<div class="container-fluid navbar-fixed-top menu-top">
+				<div class="row">
+                    <div class="col-xs-2">
+                        <img src="images/logo_ho_nobg.png" style="width:2.3em;">
+                    </div>
+				  <a href="" class="col-xs-2 tab-btn">
+				  <i class="fa fa-search fa-2x fa-fw"></i>
+				  </a>
+				  <a href="home.html" class="col-xs-2 active tab-btn">
+				  <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+				  </a>
+				  <a href="favorites.html" class="col-xs-2 tab-btn">
+				  <i class="fa fa-star fa-2x fa-fw"></i>
+				  </a>
+				  <a href="#" class="col-xs-2 tab-btn">
+				  <i class="fa fa-comments-o fa-2x fa-fw"></i>
+				  </a>
+                    <a href="settings.html" class="col-xs-2  tab-btn">
+				  <i class="fa fa-cog fa-2x fa-fw"></i>
+				  </a>
+				</div>
+			</div>
+<!--END NAVBAR-->
+<!--START CONTENTS-->
+
+<!--CONTENT-->
+
+        <div id="ptr">
+            <span class="genericon genericon-next"></span>
+
+            <div class="loading">
+                <span id="l1"></span>
+                <span id="l2"></span>
+                <span id="l3"></span>
+            </div>
+        </div>
+       <div id="content">
+                <div ui-view>
+           </div>
+
+       </div>
+
+<!--END CONTENTS-->
+
+<!--START FOOTER-->
+   		<div class="navbar navbar-fixed-bottom" style="background: #3498db;color:#efefef">
+			<div class="container-fluid menu-bottom ">
+
+
+                        <a ui-sref="handout" class="btn btn-custom btn-block" id="btnUpload" style="background:#3498db;"><center><i class="fa fa-edit fa-lg"></i>&nbsp; Hand out!</center></a>
+
+				</div>
+			</div>
+		</div>   
+       </div>
+<!--END FOOTER-->	
+
+
+       <script src="js/ui-bootstrap-tpls-0.14.1.min.js"></script>
+<!--      <script src="js/bootstrapv4.js"></script>-->
+      <script src="js/app.js"></script>
+      <script src="js/controller.js"></script>
+    <script src="js/services.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/hammer.2.0.4.js"></script>
+        <script src="js/wptr.1.1.js"></script>
+    
+	  <script src="js/fastclick.min.js"></script>
+        <script>
+            window.onload = function() {
+                WebPullToRefresh.init( {
+                    loadingFunction: exampleLoadingFunction
+                } );
+            };
+
+            // Just an example loading function that returns a
+            // promise that WebPullToRefresh can use.
+            var exampleLoadingFunction = function() {
+                return new Promise( function( resolve, reject ) {
+                    // Run some async loading code here
+
+                    if ( true /* if the loading worked */ ) {
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                } );
+            };
+        </script>
+   </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Home</title>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" >
+      <meta charset="utf-8">
+       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen">
+	  <link rel="stylesheet" href="../css/font-awesome.min.css">
+	  <link rel="stylesheet" href="../css/animate.min.css">
+       <link rel="stylesheet" href="../css/rvin.css">
+       
+      <style>
+		body
+		{
+		background: #f5f5f5;
+		padding-top:55px;
+		padding-bottom: 55px;
+		}
+		 .navbar-fixed-top .row
+		 {
+		 margin:0;
+		 padding:0;
+		 }
+		 .menu-top
+		 {
+		 padding:0;
+		 padding-top:10px;
+		 background:#3498db;
+		 }
+
+		 .menu-top .col-xs-1
+		 {
+		 padding:5;
+		 padding-bottom:5px;
+		 color:#efefef;
+		 text-decoration: none;
+		 text-align: center;
+		 font-size: 0.9em;
+		 }
+		 .menu-top .active
+		 {
+		 border-bottom: 5px solid #2aa7e8;
+		 color: #efefef;
+		 }
+		 .animated
+		 {
+		 -webkit-animation-duration: 0.55s;
+		 animation-duration: 0.55s;
+		 }
+		 .list-group-notifications .list-group-item
+		 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+		 border-left: 0;
+		 border-right: 0;
+		 border-radius:0;
+		 }
+          .heading-title
+          {
+              font-family: 'Open Sans', sans-serif;
+              font-size: 1.3em;
+              font-weight: 800;
+              color:#efefef;
+          }
+      </style>
+   </head>
+   <body>
+<!--NAV/HEADER-->
+<!--		<div class="navbar navbar-fixed-top" style="color:#efefef">-->
+<!--
+			<div class="container-fluid" style="padding: 10px;">
+				<div class="row">
+				  <div class="col-xs-6" style="padding:0">
+				  <img src="images/logo_ho_nobg.png" style="width:36px">
+				  </div>
+				  <div class="col-xs-6 text-right" style="padding:0">
+				  <h4><i class="fa fa-refresh fa-lg"></i></h4>
+				  </div>
+				</div>
+			</div>
+-->
+			<div class="container-fluid navbar-fixed-top menu-top">
+				<div class="row">
+				  <a href="../index.html" class="col-xs-1 tab-btn">
+				  <i class="fa fa-arrow-left fa-2x fa-fw"></i>
+				  </a>
+				  <span class="col-xs-11 heading-title">
+				  Settings
+				  </span>
+				</div>
+			</div>
+<!--		</div>-->
+<!--END NAV/HEADER-->
+<!--
+		<div class="btn-context">
+		<a href="#" class="fa-stack fa-2x img-circle btn-up">
+		  <i class="glyphicon glyphicon-menu-up"></i>
+		</a>
+		</div>
+-->
+
+
+       
+       
+<!--START CONTENTS-->
+		<div class="container">
+		<div class="center-block">
+
+
+<!--CONTENT-->
+            
+                            <img src="../images/logo_ho.png" class="img-responsive img-circ center-block" style="width:50%;padding:10px;">
+            
+            
+                    <button id="btnAbout" class="btn btn-custom btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle fa-lg fa-fw"></i>ABOUT</button>
+                    <button id="btnLogout" class="btn btn-custom btn-block"><i class="fa fa-sign-out fa-lg fa-fw"></i>LOGOUT</button>
+
+            </div>
+       </div>
+       </div>
+<!--END CONTENTS-->
+<!--START MODAL-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">About handouts</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer" style="padding:10px;">
+        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+           
+<!--END MODAL-->
+                        
+                        
+                        
+                        
+                        
+		
+      <script src="../js/jquery-1.11.3.min.js"></script>
+       <script src="../js/bootstrapv4.js"></script>
+   </body>
+</html>
