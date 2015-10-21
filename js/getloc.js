@@ -76,7 +76,15 @@ online({ type: 'ready' });
           alert("No results found");
         }
       } else {
-        alert("Geocoder failed due to: " + status);
+    setTimeout(alertFunc, 2500);
+        function alertFunc(){
+var r = confirm("There is no internet connection detected press ok to try again");
+if (r == true) {
+    location.reload();
+} else {
+    return;
+}
+    }
       }
     });
   }

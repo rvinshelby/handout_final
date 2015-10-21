@@ -1,4 +1,4 @@
-<div id="post_announcement" ng-repeat="posts in post | limitTo:postQuantity | orderBy: +post_date">
+<div id="post_announcement" ng-repeat="posts in post.slice().reverse() | limitTo:postQuantity | orderBy: post_date">
 <div class="container-fluid hvr-curl-top-right post_announcement" style="background:#ffffff;padding:10px;margin-bottom:10px;width:100%;">
 <div class="media">
   <div class="media-left media-middle">
