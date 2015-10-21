@@ -1,4 +1,4 @@
-<div id="post_announcement" ng-repeat="posts in post | limitTo:postQuantity">
+<div id="post_announcement" ng-repeat="posts in post | limitTo:postQuantity | orderBy: +post_date">
 <div class="container-fluid hvr-curl-top-right post_announcement" style="background:#ffffff;padding:10px;margin-bottom:10px;width:100%;">
 <div class="media">
   <div class="media-left media-middle">
@@ -7,15 +7,16 @@
   <div class="media-body">
     <h4 class="media-heading">{{posts.post_title | capitalize}}</h4><hr>
       <div class="media-content">
-    {{posts.post_content | capitalize | words: 3}}
+    {{posts.post_content | capitalize | words: 15}}
     </div>
   </div>
 </div>
     <div class="container-fluid" style="background:#efefef;padding:5px;margin-top:20px;">
-        <small><i class="fa fa-clock-o fa-fw"></i> &nbsp; Posted {{timeago}}  by: @{{post.user}}</small>
+        <small><i class="fa fa-clock-o fa-fw"></i> &nbsp; Posted {{posts.post_date}}  by: @{{posts.post_by}}</small>
     </div>
     </div>
     </div>
+<button style="font-weight:bolder;" class="btn btn-custom btn-block" ng-click="getMorePost()">Show More Posts...</button>
 
 <!--end announcement-->
 

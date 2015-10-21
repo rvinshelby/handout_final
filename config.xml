@@ -31,8 +31,8 @@
 	<gap:plugin name="org.apache.cordova.media-capture" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
-        <param name="APP_ID" value="1081077438599438" />
-        <param name="APP_NAME" value="handout.me" />
+        <param name="APP_ID" value="426651674200834" />
+        <param name="APP_NAME" value="handout" />
     </gap:plugin>
     
 	<feature name="File">
@@ -44,6 +44,6 @@
 	
 	<preference name="phonegap-version" value="3.7.0" />
 	<preference name="fullscreen" value="true" />
-	
+	<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 	<preference name="android-minSdkVersion" value="14" />
 </widget>

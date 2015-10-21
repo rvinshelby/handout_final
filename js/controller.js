@@ -49,7 +49,25 @@ function(event){
 });
 
 handoutApp.controller('handoutCtrl', function($scope, $firebaseArray){
-    $scope.user = "Rvinn"
+    $scope.user = localStorage.getItem('ho_name')
+    var ref = new Firebase("https://handout.firebaseio.com/posts");
+    var postArray = $firebaseArray(ref);
+    $scope.date = moment().format('h:mm:ss a');
+    $scope.post_title = null;
+    $scope.post_content = null;
+    $scope.post_prio = null;
+    $scope.addPost = function(){
+    postArray.$add({
+post_title : $scope.post_title,
+post_content : $scope.post_content ,
+post_date : $scope.date,
+post_prio : $scope.post_prio,
+post_by : $scope.user
+})
+    alert('Post added!')
+        $scope.post_title = null;
+    $scope.post_content = null;
+    };
 });
 
 handoutApp.controller('postCtrl', function($scope){
@@ -65,12 +83,3 @@ handoutApp.filter('capitalize', function() {
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 });
-
-handoutApp.controller('splashCtrl', ['$splash', function ($splash) {
-  this.openSplash = function () {
-    $splash.open({
-      title: 'Hi there!',
-      message: "This sure is a fine modal, isn't it?"
-    });
-  };
-}]);

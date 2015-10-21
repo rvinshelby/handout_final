@@ -11,6 +11,11 @@ $urlRouterProvider.otherwise('/main');
             templateUrl: 'templates/main.html',
             controller: 'getpostsCtrl'
         })
+        .state('verified', {
+            url: '/verified',
+            templateUrl: 'templates/verified.html',
+            controller: 'verifiedCtrl',
+        })
         .state('handout', {
             url: '/handout',
             templateUrl: 'templates/handout.html',

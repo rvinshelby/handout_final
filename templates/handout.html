@@ -2,11 +2,11 @@
 
 <div class="form-group" style="padding:10px;">
       <label><h4>Post Title:</h4></label>
-      <input type="text" placeholder="Enter title" class="form-control">
+      <input type="text" placeholder="Enter title" class="form-control" ng-model="post_title">
     </div>
 <div class="form-group" style="padding:10px;">
       <label><h4>Post Content:</h4></label>
-    <textarea rows="5" placeholder="Enter content" class="form-control"></textarea>
+    <textarea rows="5" placeholder="Enter content" class="form-control" ng-model="post_content"></textarea>
     </div>
     
         <div class="form-group" style="padding:10px;">
@@ -14,6 +14,6 @@
             <br>
         <h4 style="font-weight:bolder;">{{user}}</h4>
             <hr>
-            <button class="btn btn-custom btn-block">Post!</button>
+            <button class="btn btn-custom btn-block" ng-click="addPost()">Post!</button>
     </div>
 </div> 
