@@ -1,4 +1,4 @@
-var handoutApp = angular.module('handoutApp', ['firebase','ui.router','ui.bootstrap','chart.js','truncate']);
+var handoutApp = angular.module('handoutApp', ['firebase','ui.router','ui.bootstrap','chart.js','truncate','angularMoment']);
 handoutApp.constant('firebase_url', 'https://handout.firebaseio.com/');
 handoutApp.config(function($stateProvider, $urlRouterProvider) {
 $urlRouterProvider.otherwise('/main');

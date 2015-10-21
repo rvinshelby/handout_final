@@ -52,7 +52,29 @@ handoutApp.controller('handoutCtrl', function($scope, $firebaseArray){
     $scope.user = localStorage.getItem('ho_name')
     var ref = new Firebase("https://handout.firebaseio.com/posts");
     var postArray = $firebaseArray(ref);
-    $scope.date = moment().format('h:mm:ss a');
+    $scope.date = Date();
+    $scope.post_title = null;
+    $scope.post_content = null;
+    $scope.post_prio = null;
+    $scope.addPost = function(){
+    postArray.$add({
+post_title : $scope.post_title,
+post_content : $scope.post_content ,
+post_date : $scope.date,
+post_prio : $scope.post_prio,
+post_by : $scope.user
+})
+    alert('Post added!')
+        $scope.post_title = null;
+    $scope.post_content = null;
+    };
+});
+
+handoutApp.controller('verifiedCtrl', function($scope, $firebaseArray){
+    $scope.user = localStorage.getItem('ho_name')
+    var ref = new Firebase("https://handout.firebaseio.com/posts");
+    var postArray = $firebaseArray(ref);
+    $scope.date = Date();
     $scope.post_title = null;
     $scope.post_content = null;
     $scope.post_prio = null;
