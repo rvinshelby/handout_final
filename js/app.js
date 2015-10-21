@@ -6,9 +6,9 @@ $urlRouterProvider.otherwise('/home');
     $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
-        .state('home', {
-            url: '/home',
-            templateUrl: 'templates/home.html',
+        .state('main', {
+            url: '/main',
+            templateUrl: 'templates/main.html',
             controller: 'getpostsCtrl'
         })
         .state('handout', {

@@ -1,155 +1,58 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Home</title>
-      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"  >
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
-       
+      <title>Handout</title>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" >
       <meta charset="utf-8">
-       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-	  <link rel="stylesheet" href="css/font-awesome.min.css">
 	  <link rel="stylesheet" href="css/animate.min.css">
-        <link rel="stylesheet" href="css/genericons/genericons.css">
-        <link rel="stylesheet" href="css/base.css">
-       <link rel="stylesheet" href="css/hover.css" media="all">
-       <link rel="stylesheet" href="css/rvin.css">
-       <link rel="stylesheet" href="css/angular-chart.css">
-              <script src="js/angular.js"></script>
-            <script src="js/angular-ui-router.min.js"></script>
       <style>
 		body
 		{
-        font-family: 'Open Sans', sans-serif;
-		background: #CCCCCC;
 		padding-top:55px;
-        padding-bottom: 55px;
 		}
-		 .navbar-fixed-top .row
+        .animated
 		 {
-		 margin:0;
-		 padding:0;
+		 -webkit-animation-duration: 0.5s;
+		 animation-duration: 0.5s;
 		 }
-		 .menu-top
-		 {
-		 padding:0;
-		 padding-top:10px;
-		 background:#3498db;
-        	position: absolute;
-		 }
-
-		 .menu-top .col-xs-2
-		 {
-		 padding:0;
-		 padding-bottom:5px;
-		 color:#efefef;
-		 text-decoration: none;
-		 text-align: center;
-		 font-size: 0.9em;
-		 }
-		 .menu-top .active
-		 {
-		 border-bottom: 5px solid #2aa7e8;
-		 color: #efefef;
-		 }
-		 .animated
-		 {
-		 -webkit-animation-duration: 0.55s;
-		 animation-duration: 0.55s;
-		 }
-		 .list-group-notifications .list-group-item
-		 {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 600;
-		 border-left: 0;
-		 border-right: 0;
-		 border-radius:0;
-		 }
-          html {
-	-ms-touch-action: none;
-}
-          html::-webkit-scrollbar { 
-    display: none; 
-}
       </style>
- 
    </head>
-   <body ng-app="handoutApp">
-<!--START NAVBAR-->
-			<div class="container-fluid navbar-fixed-top menu-top">
-				<div class="row">
-                    <div class="col-xs-4 tab-btn">
-                        <a ui-sref="home"><img class="tab-btn center-block" src="images/64_nobg.png" style="width:2.3em;"></a>
-                    </div>
-<!--                    <div class="col-xs-2 tab-btn"></div>-->
-				  <a href="" class="col-xs-2 tab-btn" ng-controller="getpostsCtrl" ng-click="isCollapsed = !isCollapsed">
-				  <i class="fa fa-search fa-2x fa-fw"></i>
-				  </a>
+   <body class="bg-info">
+		<div class="container">
+<!--		<div class="center-block" style="max-width:700px;">-->
+		<div class="center-block" style="max-width:420px;padding:20px"><img src="images/splash.png" style="width:100%">
+		</div><!--center-block-->
+		</div><!--container-fluid-->
+		
+      <script src="js/jquery-1.11.3.min.js"></script>
+      <script src="js/bootstrapv4.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+       <script src="js/getloc.js"></script>
 <!--
-				  <a href="home.html" class="col-xs-2 active tab-btn">
-				  <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
-				  </a>
+       <script src="js/checkoff_util.js"></script>
+       <script src="js/checkstatus.js"></script>
 -->
-				  <a href="favorites.html" class="col-xs-2 tab-btn">
-				  <i class="fa fa-star fa-2x fa-fw"></i>
-				  </a>
-				  <a href="#" class="col-xs-2 tab-btn">
-				  <i class="fa fa-user fa-2x fa-fw"></i>
-				  </a>
-                    <a href="templates/settings.html" class="col-xs-2  tab-btn">
-				  <i class="fa fa-cog fa-2x fa-fw"></i>
-				  </a>
-				</div>
-			</div>
-<!--END NAVBAR-->
-<!--START CONTENTS-->
-
-<!--CONTENT-->
-
-        <div id="ptr">
-            <span class="genericon genericon-next"></span>
-
-    <div class="sk-three-bounce loading" style="padding-top:25px;">
-      <div class="sk-child sk-bounce1"></div>
-      <div class="sk-child sk-bounce2"></div>
-      <div class="sk-child sk-bounce3"></div>
-    </div>
-        </div>
-       <div id="content">
-                <div ui-view>
-    </div>
-       </div>
-
-<!--END CONTENTS-->
-
-<!--START FOOTER-->
-   		<div id="footer" class="navbar navbar-fixed-bottom" style="background: #3498db;color:#efefef;">
-			<div class="container-fluid menu-bottom ">
-
-
-                        <a ui-sref="handout" class="btn btn-custom btn-block" style="background:#3498db;"><center><i class="fa fa-edit fa-lg"></i>&nbsp; Hand out!</center></a>
-
-				</div>
-			</div>
-		</div>   
-       </div>
-<!--END FOOTER-->	
-
-
-       <script src="js/ui-bootstrap-tpls-0.14.1.min.js"></script>
-<!--      <script src="js/bootstrapv4.js"></script>-->
-      <script src="js/app.js"></script>
-      <script src="js/controller.js"></script>
-    <script src="js/services.js"></script> 
-        <script src="js/functions.js"></script>
-        <script src="js/truncate.js"></script>
-        <script src="js/angularfire.min.js"></script>
-        <script src="js/firebase.js"></script>
-        <script src="js/hammer.2.0.4.js"></script>
-        <script src="js/wptr.1.1.js"></script>
-        <script src="js/Chart.js"></script>
-        <script src="js/angular-chart.js"></script>
-        <script src="js/moment-with-locales.js"></script>
-
+<!--
+	  <script>
+	  $(function()
+	  {
+	  $("body").fadeIn("fast");
+	  setTimeout(function()
+	  {
+			if(localStorage.getItem("logined") == 'true')
+			{
+				$("body").trigger("transitionandroid",["home.html","up"]);
+				return;
+			}
+			else
+			{
+				$("body").trigger("transitionandroid",["login++.html","up"]);
+				return;
+			}
+	  },1000);
+	  });
+	  </script>
+-->
    </body>
 </html>
