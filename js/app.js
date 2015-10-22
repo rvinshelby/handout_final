@@ -14,7 +14,12 @@ $urlRouterProvider.otherwise('/main');
         .state('verified', {
             url: '/verified',
             templateUrl: 'templates/verified.html',
-            controller: 'verifiedCtrl',
+            controller: 'vCtrl',
+        })
+        .state('verified-single', {
+            url: '/verified/:id',
+            templateUrl: 'templates/verified-single.html',
+            controller: 'verifiedCtrl'
         })
         .state('handout', {
             url: '/handout',
@@ -26,10 +31,10 @@ $urlRouterProvider.otherwise('/main');
             templateUrl: 'templates/post.html',
             controller: 'getPostCtrl'
         })
-        .state('premium', {
-            url: '/premium',
-            templateUrl: 'templates/premium.html',
-            controller: 'premiumCtrl'
+        .state('mypost', {
+            url: '/mypost',
+            templateUrl: 'templates/user.html',
+            controller: 'getpostsCtrl'
         })
         });
 

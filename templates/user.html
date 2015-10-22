@@ -1,11 +1,4 @@
-
-
-<div class="input-group" style="padding:10px;">
-  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search fa-fw"></i></span>
-  <input type="text" class="form-control input-lg" placeholder="Username" aria-describedby="basic-addon1" ng-model="query">
-</div>
-
-<a style="color:#262626;" href="#/post/{{posts.$id}}" ng-repeat="posts in post.slice().reverse() | limitTo:postQuantity | orderBy: post_date | filter: query"><div id="post_announcement">
+<a style="color:#262626;" href="#/post/{{posts.$id}}" ng-repeat="posts in post.slice().reverse() | limitTo:postQuantity | orderBy: post_date | filter: username.username"><div id="post_announcement">
 <div class="container-fluid post_announcement" style="background:#ffffff;padding:10px;margin-bottom:10px;width:100%;">
 <div class="media">
 <!--     

@@ -31,7 +31,7 @@ if (r == true) {
 //      console.log(results)
         if (results[1]) {
 
-//         alert(results[0].address_components[1].long_name + " " + "City")
+         alert("Your current location is" + results[0].address_components[1].long_name + " " + "City")
          localStorage.setItem('current_loc', results[0].address_components[2].long_name + " " + "City")
 function online(event) {
 //  statusElem.className = navigator.onLine ? 'online' : 'offline';

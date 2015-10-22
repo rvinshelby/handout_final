@@ -1,4 +1,7 @@
-handoutApp.controller('getpostsCtrl', function($scope, $firebaseArray, $state){
+handoutApp.controller('getpostsCtrl', function($scope, $firebaseArray, $state, ACCOUNTS){
+  
+
+    $scope.username = JSON.parse(localStorage.getItem('user_info'));
     $scope.postQuantity = 5;
     
     $scope.getMorePost = function(){
@@ -46,10 +49,14 @@ function(event){
     
     $scope.time = moment('2015-10-18T16:51:27.307Z');
     $scope.timeago = moment($scope.time).fromNow();
+  
+  
+    ACCOUNTS.Add(JSON.parse(localStorage.getItem('user_info')));  
+  
 });
 
 handoutApp.controller('handoutCtrl', function($scope, $firebaseArray){
-    $scope.user = localStorage.getItem('ho_name')
+    $scope.user = angular.fromJson(localStorage.getItem('user_info')).username;
     var ref = new Firebase("https://handout.firebaseio.com/posts");
     var postArray = $firebaseArray(ref);
     $scope.date = Date();
@@ -105,3 +112,23 @@ handoutApp.filter('capitalize', function() {
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 });
+
+handoutApp.controller('verifiedCtrl', function($scope, ACCOUNTS, POSTS, $stateParams){
+  
+  $scope.user_id = $stateParams.id;
+  
+  POSTS.GetAll().$loaded().then(function(){
+    $scope.posts = POSTS.GetAll();
+  })
+  
+});
+
+handoutApp.controller('vCtrl', function($scope){
+  $scope.username = angular.fromJson(localStorage.getItem('user_info')).username;
+})
+
+
+
+
+
+

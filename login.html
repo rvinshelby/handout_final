@@ -10,6 +10,8 @@
       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
        <link rel="stylesheet" href="css/rvin.css" media="screen">
       <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+      <script src="js/angular.js"></script>
+      <script src="js/angular-ui-router.min.js"></script>
       <style>
 		body
 		{
@@ -22,10 +24,20 @@
 		 -webkit-animation-duration: 0.5s;
 		 animation-duration: 0.5s;
 		 }
+        .btn-success
+        {
+          font-family: 'Open sans', sans-serif;
+          font-weight: bolder;
+        }
+        .btn-danger
+        {
+          font-family: 'Open sans', sans-serif;
+          font-weight: bolder;
+        }
           
       </style>
    </head>
-   <body class="bg-info">
+   <body class="bg-info" ng-app="handoutApp">
 <!--LOGIN FORM-->
 <section id="login">
     <div class="container">
@@ -35,10 +47,27 @@
                 <div class="center-block" style="max-width:420px;padding:20px"><img src="images/handout_text.png" style="width:100%"></div>
                     <br>
 <!--CONTENT-->
+<!--
                     <button class="btn btn-facebook btn-block disabled" id="btn-facebook"><i class="fa fa-facebook-official fa-fw"></i> &nbsp; Login with Facebook</button>
                     <button class="btn btn-gplus btn-block disabled" id="btn-gplus"><i class="fa fa-google-plus-square fa-fw"></i> &nbsp; Login with Google+</button>
 
                     <button class="btn btn-twitter btn-block" id="btn-twitter"><i class="fa fa-twitter-square fa-fw"></i> &nbsp; Login with Twitter</button>
+-->
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Username</label>
+                            <input type="text" name="login-email" id="login-email" class="form-control input-lg"placeholder="Enter Username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="key" class="sr-only">Password</label>
+                            <input type="password" name="login-password" id="login-password" class="form-control input-lg" placeholder="Enter Password" required>
+                        </div>  
+
+                    </form>
+                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in"></input>
+
+                        <button class="center-block btn btn-facebook btn-lg" id="btn-register">Register</button>
+                   
 
                     <hr>
         	    </div>
@@ -56,27 +85,178 @@
         </div>
     </div>
 </footer>
+
+<!--MODAL-->
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3 class="modal-title modal-ho-title" id="lineModalLabel">Handout Account Registration</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+                        <div class="input-group" id="user-regis" style="margin-bottom:5px;">
+                        <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
+                            <input type="text" name="register-email" id="register-username" class="form-control" placeholder="Enter Username" required><br>
+                        </div>
+                        <div class="input-group" id="user-regis" style="margin-bottom:5px;">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa-lg fa-fw"></i></span>
+                            <input type="email" name="register-email" id="register-email" class="form-control" placeholder="Enter Email" required><br>
+                        </div>
+                        <div class="input-group" id="password-regis" style="margin-bottom:5px;">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg fa-fw" style="margin-bottom:2px;"></i></span>
+                            <input type="password" class="form-control" name="register-pass" id="register-pass" placeholder="Enter Password" required>
+                        </div>
+                           <div class="input-group" id="city_choose" style="margin-bottom:5 px;">
+                            <span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw" style="margin-bottom:2px;"></i></span>
+                            <select class="form-control" id="choose_city" name ="choose_city" required>
+      <option>Select Hometown</option>
+      <option value="Abra">Abra</option>
+      <option value="Agusan del Norte">Agusan del Norte</option>
+      <option value="Agusan del Sur">Agusan del Sur</option>
+      <option value="Aklan">Aklan</option>
+      <option value="Albay">Albay</option>
+      <option value="Antique">Antique</option>
+      <option value="Apayao">Apayao</option>
+      <option value="Aurora">Aurora</option>
+      <option value="Basilan">Basilan</option>
+      <option value="Bataan">Bataan</option>
+      <option value="Batanes">Batanes</option>
+      <option value="Batangas">Batangas</option>
+      <option value="Benguet">Benguet</option>
+      <option value="Biliran">Biliran</option>
+      <option value="Bohol">Bohol</option>
+      <option value="Bukidnon">Bukidnon</option>
+      <option value="Bulacan">Bulacan</option>
+      <option value="Cagayan">Cagayan</option>
+      <option value="Camarines Norte">Camarines Norte</option>
+      <option value="Camarines Sur">Camarines Sur</option>
+      <option value="Camiguin">Camiguin</option>
+      <option value="Capiz">Capiz</option>
+      <option value="Catanduanes">Catanduanes</option>
+      <option value="Cavite">Cavite</option>
+      <option value="Cebu">Cebu</option>
+      <option value="Compostela Valley">Compostela Valley</option>
+      <option value="Cotabato">Cotabato</option>
+      <option value="Davao del Norte">Davao del Norte</option>
+      <option value="Davao del Sur">Davao del Sur</option>
+      <option value="Davao Occidental">Davao Occidental</option>
+      <option value="Davao Oriental">Davao Oriental</option>
+      <option value="Dinagat Islands">Dinagat Islands</option>
+      <option value="Eastern Samar">Eastern Samar</option>
+      <option value="Guimaras">Guimaras</option>
+      <option value="Ifugao">Ifugao</option>
+      <option value="Ilocos Norte">Ilocos Norte</option>
+      <option value="Ilocos Sur">Ilocos Sur</option>
+      <option value="Iloilo">Iloilo</option>
+      <option value="Isabela">Isabela</option>
+      <option value="Kalinga">Kalinga</option>
+      <option value="La Union">La Union</option>
+      <option value="Laguna">Laguna</option>
+      <option value="Lanao del Norte">Lanao del Norte</option>
+      <option value="Lanao del Sur">Lanao del Sur</option>
+      <option value="Leyte">Leyte</option>
+      <option value="Maguindanao">Maguindanao</option>
+      <option value="Marinduque">Marinduque</option>
+      <option value="Masbate">Masbate</option>
+      <option value="Metro Manila">Metro Manila</option>
+      <option value="Misamis Occidental">Misamis Occidental</option>
+      <option value="Misamis Oriental">Misamis Oriental</option>
+      <option value="Mountain Province">Mountain Province</option>
+      <option value="Negros Occidental">Negros Occidental</option>
+      <option value="Negros Oriental">Negros Oriental</option>
+      <option value="Northern Samar">Northern Samar</option>
+      <option value="Nueva Ecija">Nueva Ecija</option>
+      <option value="Nueva Vizcaya">Nueva Vizcaya</option>
+      <option value="Occidental Mindoro">Occidental Mindoro</option>
+      <option value="Oriental Mindoro ">Oriental Mindoro  </option>
+      <option value="Palawan">Palawan</option>
+      <option value="Pampanga">Pampanga</option>
+      <option value="Pangasinan">Pangasinan</option>
+      <option value="Quezon">Quezon</option>
+      <option value="Quirino">Quirino</option>
+      <option value="Rizal">Rizal</option>
+      <option value="Romblon">Romblon</option>
+      <option value="Samar">Samar</option>
+      <option value="Sarangani">Sarangani</option>
+      <option value="Siquijor">Siquijor</option>
+      <option value="Sorsogon">Sorsogon</option>
+      <option value="South Cotabato">South Cotabato</option>
+      <option value="Southern Leyte">Southern Leyte</option>
+      <option value="Sultan Kudarat">Sultan Kudarat</option>
+      <option value="Sulu">Sulu</option>
+      <option value="Surigao del Norte">Surigao del Norte</option>
+      <option value="Surigao del Sur">Surigao del Sur</option>
+      <option value="Tarlac">Tarlac</option>
+      <option value="Tawi-Tawi">Tawi-Tawi</option>
+      <option value="Zambales">Zambales</option>
+      <option value="Zamboanga del Norte">Zamboanga del Norte</option>
+      <option value="Zamboanga del Sur">Zamboanga del Sur</option>
+      <option value="Zamboanga Sibugay">Zamboanga Sibugay</option>
+
+                            </select>
+                        </div> 
+                <br>
+             
+                     <input type="submit" id="btn-register-final" class="btn btn-success btn-block" value="Submit"></input>
+
+					<br><button type="button" class="btn btn-danger btn-block" data-dismiss="modal"  role="button">Cancel</button>
+		</div>
+	</div>
+  </div>
+<!--END MODAL-->
+
 <!--LOGIN END-->
        <script src="js/jquery-1.11.3.min.js"></script>
        <script src="js/bootstrapv4.js"></script>
-       <script src="js/openfb.js"></script>
+       <script src="js/app.js"></script>
+       <script src="js/controller.js"></script>
+<!--       <script src="js/openfb.js"></script>-->
         <script>
             $(document).ready(function(){
-openFB.init({appId: '426651674200834'});
-$("#btn-facebook").click(function(){
-openFB.login(
-                function(response) {
-                    if(response.status === 'connected') {
-                        localStorage.setItem('ho-user', response.name);
-                        location.href="home.html";
-                    } else {
-                        alert('Facebook login failed: ' + response.error);
-                    }
-                }, {scope: 'email'});
-});
-                $("#btn-gplus").click(function(){
-                    location.href="home.html" 
+                $('#btn-register').click(function(){
+                   $('#register-modal').modal({keyboard: true},'show'); 
+                  
                 });
+              
+                $('#btn-register-final').click(function(){
+                  localStorage.setItem('user_info', JSON.stringify({
+                    username: $('#register-username').val(),
+                    email: $('#register-email').val(),
+                    password: $('#register-pass').val(),
+                    location: $('#choose_city').val()
+                    
+                  }))
+                  $('#register-modal').modal('hide');
+                })
+                
+                $('#btn-login').click(function(){
+                  var user_info = JSON.parse(localStorage.getItem('user_info'));
+                  if($('#login-password').val() == user_info.password &&
+                     $('#login-email').val() == user_info.username){
+                    alert('Logged in successfully');
+                    location.href = 'home.html';
+                  }else{
+                    alert('Username/passwords do not match');
+                  }
+                })
+              
+//openFB.init({appId: '426651674200834'});
+//$("#btn-facebook").click(function(){
+//openFB.login(
+//                function(response) {
+//                    if(response.status === 'connected') {
+//                        localStorage.setItem('ho-user', response.name);
+//                        location.href="home.html";
+//                    } else {
+//                        alert('Facebook login failed: ' + response.error);
+//                    }
+//                }, {scope: 'email'});
+//});
+//                $("#btn-gplus").click(function(){
+//                    location.href="home.html" 
+//                });
                 });
             
        </script>

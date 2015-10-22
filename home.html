@@ -39,7 +39,7 @@
         	position: absolute;
 		 }
 
-		 .menu-top .col-xs-2
+		 .menu-top .col-xs-3
 		 {
 		 padding:0;
 		 padding-bottom:5px;
@@ -73,31 +73,32 @@
     display: none; 
 }
       </style>
- 
    </head>
    <body ng-app="handoutApp">
 <!--START NAVBAR-->
 			<div class="container-fluid navbar-fixed-top menu-top">
 				<div class="row">
-                    <div class="col-xs-4 tab-btn">
+                    <div class="col-xs-3 tab-btn">
                         <a ui-sref="main"><img class="tab-btn center-block" src="images/64_nobg.png" style="width:2.3em;"></a>
                     </div>
 <!--                    <div class="col-xs-2 tab-btn"></div>-->
-				  <a href="" class="col-xs-2 tab-btn" ng-controller="getpostsCtrl" ng-click="isCollapsed = !isCollapsed">
+<!--
+				  <a href="" class="col-xs-4 tab-btn" ng-controller="getpostsCtrl" ng-click="isCollapsed = !isCollapsed">
 				  <i class="fa fa-search fa-2x fa-fw"></i>
 				  </a>
+-->
 <!--
 				  <a href="home.html" class="col-xs-2 active tab-btn">
 				  <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
 				  </a>
 -->
-				  <a ui-sref="verified" class="col-xs-2 tab-btn">
+				  <a ui-sref="verified" class="col-xs-3 tab-btn">
 				  <i class="fa fa-check-circle fa-2x fa-fw"></i>
 				  </a>
-				  <a href="#" class="col-xs-2 tab-btn">
+				  <a ui-sref="mypost" class="col-xs-3 tab-btn">
 				  <i class="fa fa-user fa-2x fa-fw"></i>
 				  </a>
-                    <a href="templates/settings.html" class="col-xs-2  tab-btn">
+                    <a href="templates/settings.html" class="col-xs-3  tab-btn">
 				  <i class="fa fa-cog fa-2x fa-fw"></i>
 				  </a>
 				</div>
@@ -143,6 +144,7 @@
       <script src="js/controller.js"></script>
     <script src="js/services.js"></script> 
        <script src="js/post-factory.js"></script>
+       <script src="js/accounts.js"></script>
         <script src="js/functions.js"></script>
         <script src="js/truncate.js"></script>
         <script src="js/angularfire.min.js"></script>
